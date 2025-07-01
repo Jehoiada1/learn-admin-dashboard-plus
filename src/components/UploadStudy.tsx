@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Plus, X, Upload, FileText, Volume2, Save, Eye } from 'lucide-react';
+import { Plus, X, Upload, FileText, Volume2, Save, Eye, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
