@@ -1,9 +1,12 @@
-
 import React from 'react';
-import { BookOpen, Users, Upload, TrendingUp, Activity, Eye } from 'lucide-react';
+import { BookOpen, Users, Upload, TrendingUp, Activity, Eye, FileText, Video, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
-const Dashboard = () => {
+interface DashboardProps {
+  onPageChange: (page: string) => void;
+}
+
+const Dashboard = ({ onPageChange }: DashboardProps) => {
   const stats = [
     {
       title: 'Total Studies',
@@ -55,6 +58,51 @@ const Dashboard = () => {
     };
     return colors[color as keyof typeof colors] || 'bg-brand-gold';
   };
+
+  const quickActions = [
+    {
+      title: 'Upload New Study',
+      description: 'Add a new course or study material',
+      icon: Upload,
+      color: 'brand-gold',
+      action: () => onPageChange('upload')
+    },
+    {
+      title: 'Upload New Devotion',
+      description: 'Share daily spiritual guidance',
+      icon: FileText,
+      color: 'brand-success',
+      action: () => onPageChange('upload-devotion')
+    },
+    {
+      title: 'Upload New Sermon',
+      description: 'Add inspiring sermon content',
+      icon: Video,
+      color: 'brand-brown',
+      action: () => onPageChange('upload-sermon')
+    },
+    {
+      title: 'View Prayer Requests',
+      description: 'Manage community prayer requests',
+      icon: MessageSquare,
+      color: 'brand-warning',
+      action: () => onPageChange('requests')
+    },
+    {
+      title: 'Manage Studies',
+      description: 'Edit, lock, or delete existing studies',
+      icon: BookOpen,
+      color: 'brand-success',
+      action: () => onPageChange('manage')
+    },
+    {
+      title: 'View User Progress',
+      description: 'Track student completion and performance',
+      icon: Users,
+      color: 'brand-brown',
+      action: () => onPageChange('progress')
+    }
+  ];
 
   return (
     <div className="p-6 space-y-6">
@@ -119,33 +167,24 @@ const Dashboard = () => {
             <Eye className="h-5 w-5 text-brand-gold" />
           </div>
           <div className="space-y-3">
-            <button className="w-full p-4 text-left border border-brand-border rounded-lg hover:border-brand-gold hover:bg-brand-beige/30 transition-all duration-200 group">
-              <div className="flex items-center space-x-3">
-                <Upload className="h-5 w-5 text-brand-gold group-hover:text-brand-gold" />
-                <div>
-                  <p className="font-medium text-brand-brown">Upload New Study</p>
-                  <p className="text-sm text-brand-brown/60">Add a new course or study material</p>
-                </div>
-              </div>
-            </button>
-            <button className="w-full p-4 text-left border border-brand-border rounded-lg hover:border-brand-success hover:bg-brand-success/5 transition-all duration-200 group">
-              <div className="flex items-center space-x-3">
-                <BookOpen className="h-5 w-5 text-brand-success group-hover:text-brand-success" />
-                <div>
-                  <p className="font-medium text-brand-brown">Manage Studies</p>
-                  <p className="text-sm text-brand-brown/60">Edit, lock, or delete existing studies</p>
-                </div>
-              </div>
-            </button>
-            <button className="w-full p-4 text-left border border-brand-border rounded-lg hover:border-brand-brown hover:bg-brand-brown/5 transition-all duration-200 group">
-              <div className="flex items-center space-x-3">
-                <Users className="h-5 w-5 text-brand-brown group-hover:text-brand-brown" />
-                <div>
-                  <p className="font-medium text-brand-brown">View User Progress</p>
-                  <p className="text-sm text-brand-brown/60">Track student completion and performance</p>
-                </div>
-              </div>
-            </button>
+            {quickActions.slice(0, 3).map((action, index) => {
+              const Icon = action.icon;
+              return (
+                <button
+                  key={index}
+                  onClick={action.action}
+                  className="w-full p-4 text-left border border-brand-border rounded-lg hover:border-brand-gold hover:bg-brand-beige/30 transition-all duration-200 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <Icon className={`h-5 w-5 text-${action.color} group-hover:text-brand-gold`} />
+                    <div>
+                      <p className="font-medium text-brand-brown">{action.title}</p>
+                      <p className="text-sm text-brand-brown/60">{action.description}</p>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </Card>
       </div>

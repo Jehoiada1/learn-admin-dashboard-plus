@@ -9,7 +9,10 @@ import {
   Home,
   Settings,
   LogOut,
-  Shield
+  Shield,
+  FileText,
+  Video,
+  MessageSquare
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -25,8 +28,11 @@ const AdminLayout = ({ children, currentPage, onPageChange }: AdminLayoutProps) 
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'upload', label: 'Upload Study', icon: Upload },
+    { id: 'upload-devotion', label: 'Upload Devotion', icon: FileText },
+    { id: 'upload-sermon', label: 'Upload Sermon', icon: Video },
     { id: 'manage', label: 'Manage Studies', icon: BookOpen },
     { id: 'progress', label: 'User Progress', icon: Users },
+    { id: 'requests', label: 'Prayer Requests', icon: MessageSquare },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 
@@ -102,7 +108,7 @@ const AdminLayout = ({ children, currentPage, onPageChange }: AdminLayoutProps) 
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top header */}
-        <header className="bg-white shadow-sm border-b border-brand-gold lg:hidden">
+        <header className="bg-white shadow-sm border-b border-brand-border lg:hidden">
           <div className="flex items-center justify-between h-16 px-4">
             <Button
               variant="ghost"
