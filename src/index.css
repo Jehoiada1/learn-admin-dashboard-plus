@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,20 +40,23 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand Colors */
+    --brand-cream: 35 67% 96%;        /* #FDF6EC */
+    --brand-brown: 28 40% 18%;        /* #3E2F1C */
+    --brand-gold: 48 89% 62%;         /* #F5C542 */
+    --brand-soft-gold: 45 64% 79%;    /* #F3D398 */
+    --brand-beige: 35 45% 92%;        /* #F7EEDB */
+    --brand-success: 122 39% 49%;     /* #4CAF50 */
+    --brand-warning: 36 97% 56%;      /* #FFA726 */
+    --brand-border: 35 25% 85%;       /* #DDD5C8 */
   }
 
   .dark {
@@ -101,5 +105,30 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-color: hsl(var(--brand-cream));
+    color: hsl(var(--brand-brown));
+    font-family: 'Nunito', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   }
+}
+
+/* Brand utility classes */
+@layer utilities {
+  .bg-brand-cream { background-color: hsl(var(--brand-cream)); }
+  .bg-brand-brown { background-color: hsl(var(--brand-brown)); }
+  .bg-brand-gold { background-color: hsl(var(--brand-gold)); }
+  .bg-brand-soft-gold { background-color: hsl(var(--brand-soft-gold)); }
+  .bg-brand-beige { background-color: hsl(var(--brand-beige)); }
+  .bg-brand-success { background-color: hsl(var(--brand-success)); }
+  .bg-brand-warning { background-color: hsl(var(--brand-warning)); }
+  
+  .text-brand-cream { color: hsl(var(--brand-cream)); }
+  .text-brand-brown { color: hsl(var(--brand-brown)); }
+  .text-brand-gold { color: hsl(var(--brand-gold)); }
+  .text-brand-soft-gold { color: hsl(var(--brand-soft-gold)); }
+  .text-brand-beige { color: hsl(var(--brand-beige)); }
+  .text-brand-success { color: hsl(var(--brand-success)); }
+  .text-brand-warning { color: hsl(var(--brand-warning)); }
+  
+  .border-brand-border { border-color: hsl(var(--brand-border)); }
+  .border-brand-gold { border-color: hsl(var(--brand-gold)); }
 }
