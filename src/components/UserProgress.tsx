@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Search, Download, Filter, TrendingUp, Users, Award, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,9 +24,9 @@ const UserProgress = () => {
   const progressData = [
     {
       id: '1',
-      username: 'John Doe',
-      email: 'john@example.com',
-      studyName: 'Advanced React Patterns',
+      username: 'Abebe Kebede',
+      email: 'abebe.kebede@example.com',
+      studyName: 'Foundations of Faith',
       chaptersCompleted: 8,
       totalChapters: 12,
       percentageComplete: 67,
@@ -37,9 +36,9 @@ const UserProgress = () => {
     },
     {
       id: '2',
-      username: 'Sarah Wilson',
-      email: 'sarah@example.com',
-      studyName: 'TypeScript Fundamentals',
+      username: 'Aster Muluneh',
+      email: 'aster.muluneh@example.com',
+      studyName: 'Prayer and Meditation Principles',
       chaptersCompleted: 6,
       totalChapters: 8,
       percentageComplete: 75,
@@ -49,9 +48,9 @@ const UserProgress = () => {
     },
     {
       id: '3',
-      username: 'Mike Johnson',
-      email: 'mike@example.com',
-      studyName: 'Node.js Backend Development',
+      username: 'Dawit Haile',
+      email: 'dawit.haile@example.com',
+      studyName: 'Biblical Study Methods',
       chaptersCompleted: 15,
       totalChapters: 15,
       percentageComplete: 100,
@@ -61,21 +60,21 @@ const UserProgress = () => {
     },
     {
       id: '4',
-      username: 'Emma Davis',
-      email: 'emma@example.com',
-      studyName: 'CSS Grid and Flexbox Mastery',
-      chaptersCompleted: 4,
-      totalChapters: 6,
-      percentageComplete: 67,
+      username: 'Hanan Tesfaye',
+      email: 'hanan.tesfaye@example.com',
+      studyName: 'Christian Leadership Development',
+      chaptersCompleted: 7,
+      totalChapters: 10,
+      percentageComplete: 70,
       lastActivity: '5 hours ago',
       enrolledDate: '2024-01-18',
-      timeSpent: '12h 20m'
+      timeSpent: '19h 20m'
     },
     {
       id: '5',
-      username: 'Alex Chen',
-      email: 'alex@example.com',
-      studyName: 'Advanced React Patterns',
+      username: 'Solomon Bekele',
+      email: 'solomon.bekele@example.com',
+      studyName: 'Foundations of Faith',
       chaptersCompleted: 12,
       totalChapters: 12,
       percentageComplete: 100,
@@ -85,7 +84,7 @@ const UserProgress = () => {
     }
   ];
 
-  const studies = ['All Studies', 'Advanced React Patterns', 'TypeScript Fundamentals', 'Node.js Backend Development', 'CSS Grid and Flexbox Mastery'];
+  const studies = ['All Studies', 'Foundations of Faith', 'Prayer and Meditation Principles', 'Biblical Study Methods', 'Christian Leadership Development'];
 
   const filteredData = progressData.filter(user => {
     const matchesSearch = user.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -98,16 +97,16 @@ const UserProgress = () => {
   });
 
   const getProgressColor = (percentage: number) => {
-    if (percentage === 100) return 'bg-green-500';
-    if (percentage >= 75) return 'bg-blue-500';
-    if (percentage >= 50) return 'bg-yellow-500';
+    if (percentage === 100) return 'bg-brand-success';
+    if (percentage >= 75) return 'bg-brand-gold';
+    if (percentage >= 50) return 'bg-brand-warning';
     return 'bg-red-500';
   };
 
   const getProgressTextColor = (percentage: number) => {
-    if (percentage === 100) return 'text-green-700';
-    if (percentage >= 75) return 'text-blue-700';
-    if (percentage >= 50) return 'text-yellow-700';
+    if (percentage === 100) return 'text-brand-success';
+    if (percentage >= 75) return 'text-brand-gold';
+    if (percentage >= 50) return 'text-brand-warning';
     return 'text-red-700';
   };
 
@@ -120,8 +119,8 @@ const UserProgress = () => {
   return (
     <div className="p-6">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">User Progress</h1>
-        <p className="text-gray-600">Track student progress and performance across all studies.</p>
+        <h1 className="text-3xl font-bold text-brand-brown mb-2">User Progress</h1>
+        <p className="text-brand-brown/70">Track student progress and performance across all spiritual studies.</p>
       </div>
 
       {/* Summary Cards */}
@@ -129,40 +128,40 @@ const UserProgress = () => {
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-gray-900">{totalUsers}</p>
-              <p className="text-gray-600 text-sm">Total Users</p>
+              <p className="text-2xl font-bold text-brand-brown">{totalUsers}</p>
+              <p className="text-brand-brown/70 text-sm">Total Users</p>
             </div>
-            <Users className="h-8 w-8 text-blue-500" />
+            <Users className="h-8 w-8 text-brand-gold" />
           </div>
         </Card>
         
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-gray-900">{completedUsers}</p>
-              <p className="text-gray-600 text-sm">Completed Studies</p>
+              <p className="text-2xl font-bold text-brand-brown">{completedUsers}</p>
+              <p className="text-brand-brown/70 text-sm">Completed Studies</p>
             </div>
-            <Award className="h-8 w-8 text-green-500" />
+            <Award className="h-8 w-8 text-brand-success" />
           </div>
         </Card>
         
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-gray-900">{averageProgress}%</p>
-              <p className="text-gray-600 text-sm">Average Progress</p>
+              <p className="text-2xl font-bold text-brand-brown">{averageProgress}%</p>
+              <p className="text-brand-brown/70 text-sm">Average Progress</p>
             </div>
-            <TrendingUp className="h-8 w-8 text-purple-500" />
+            <TrendingUp className="h-8 w-8 text-brand-warning" />
           </div>
         </Card>
         
         <Card className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-2xl font-bold text-gray-900">{activeUsers}</p>
-              <p className="text-gray-600 text-sm">Active Today</p>
+              <p className="text-2xl font-bold text-brand-brown">{activeUsers}</p>
+              <p className="text-brand-brown/70 text-sm">Active Today</p>
             </div>
-            <BookOpen className="h-8 w-8 text-orange-500" />
+            <BookOpen className="h-8 w-8 text-brand-brown" />
           </div>
         </Card>
       </div>
@@ -170,7 +169,7 @@ const UserProgress = () => {
       {/* Search and Filter */}
       <div className="mb-6 flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-brown/40" />
           <Input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -179,11 +178,11 @@ const UserProgress = () => {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <Filter className="h-4 w-4 text-gray-500" />
+          <Filter className="h-4 w-4 text-brand-brown/50" />
           <select
             value={filterStudy}
             onChange={(e) => setFilterStudy(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2 border border-brand-border rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold"
           >
             {studies.map(study => (
               <option key={study} value={study === 'All Studies' ? 'all' : study}>{study}</option>
@@ -200,32 +199,32 @@ const UserProgress = () => {
       <Card className="overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-50 border-b">
+            <thead className="bg-brand-beige border-b border-brand-border">
               <tr>
-                <th className="text-left py-4 px-6 font-medium text-gray-900">User</th>
-                <th className="text-left py-4 px-6 font-medium text-gray-900">Study</th>
-                <th className="text-left py-4 px-6 font-medium text-gray-900">Progress</th>
-                <th className="text-left py-4 px-6 font-medium text-gray-900">Chapters</th>
-                <th className="text-left py-4 px-6 font-medium text-gray-900">Time Spent</th>
-                <th className="text-left py-4 px-6 font-medium text-gray-900">Last Activity</th>
+                <th className="text-left py-4 px-6 font-medium text-brand-brown">User</th>
+                <th className="text-left py-4 px-6 font-medium text-brand-brown">Study</th>
+                <th className="text-left py-4 px-6 font-medium text-brand-brown">Progress</th>
+                <th className="text-left py-4 px-6 font-medium text-brand-brown">Chapters</th>
+                <th className="text-left py-4 px-6 font-medium text-brand-brown">Time Spent</th>
+                <th className="text-left py-4 px-6 font-medium text-brand-brown">Last Activity</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-brand-border">
               {filteredData.map((user) => (
-                <tr key={user.id} className="hover:bg-gray-50 transition-colors">
+                <tr key={user.id} className="hover:bg-brand-beige/30 transition-colors">
                   <td className="py-4 px-6">
                     <div>
-                      <div className="font-medium text-gray-900">{user.username}</div>
-                      <div className="text-sm text-gray-500">{user.email}</div>
+                      <div className="font-medium text-brand-brown">{user.username}</div>
+                      <div className="text-sm text-brand-brown/60">{user.email}</div>
                     </div>
                   </td>
                   <td className="py-4 px-6">
-                    <div className="font-medium text-gray-900">{user.studyName}</div>
-                    <div className="text-sm text-gray-500">Enrolled {user.enrolledDate}</div>
+                    <div className="font-medium text-brand-brown">{user.studyName}</div>
+                    <div className="text-sm text-brand-brown/60">Enrolled {user.enrolledDate}</div>
                   </td>
                   <td className="py-4 px-6">
                     <div className="flex items-center space-x-3">
-                      <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div className="flex-1 bg-brand-beige/50 rounded-full h-2">
                         <div 
                           className={`h-2 rounded-full ${getProgressColor(user.percentageComplete)}`}
                           style={{ width: `${user.percentageComplete}%` }}
@@ -237,12 +236,12 @@ const UserProgress = () => {
                     </div>
                   </td>
                   <td className="py-4 px-6">
-                    <span className="text-gray-900 font-medium">
+                    <span className="text-brand-brown font-medium">
                       {user.chaptersCompleted}/{user.totalChapters}
                     </span>
                   </td>
-                  <td className="py-4 px-6 text-gray-900">{user.timeSpent}</td>
-                  <td className="py-4 px-6 text-gray-500">{user.lastActivity}</td>
+                  <td className="py-4 px-6 text-brand-brown">{user.timeSpent}</td>
+                  <td className="py-4 px-6 text-brand-brown/60">{user.lastActivity}</td>
                 </tr>
               ))}
             </tbody>
@@ -252,8 +251,8 @@ const UserProgress = () => {
 
       {filteredData.length === 0 && (
         <div className="text-center py-12">
-          <Users className="h-12 w-12 mx-auto mb-4 text-gray-300" />
-          <p className="text-gray-500">No user progress data found matching your criteria.</p>
+          <Users className="h-12 w-12 mx-auto mb-4 text-brand-brown/30" />
+          <p className="text-brand-brown/60">No user progress data found matching your criteria.</p>
         </div>
       )}
     </div>

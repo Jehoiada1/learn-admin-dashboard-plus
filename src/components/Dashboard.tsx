@@ -43,10 +43,10 @@ const Dashboard = ({ onPageChange }: DashboardProps) => {
   ];
 
   const recentActivities = [
-    { user: 'John Doe', action: 'Completed', study: 'Advanced React Patterns', time: '2 hours ago' },
-    { user: 'Sarah Wilson', action: 'Started', study: 'TypeScript Fundamentals', time: '4 hours ago' },
-    { user: 'Mike Johnson', action: 'Uploaded', study: 'New Node.js Course', time: '6 hours ago' },
-    { user: 'Emma Davis', action: 'Completed', study: 'CSS Grid Mastery', time: '1 day ago' },
+    { user: 'Abebe Kebede', action: 'Completed', study: 'Foundations of Faith', time: '2 hours ago' },
+    { user: 'Aster Muluneh', action: 'Started', study: 'Prayer and Meditation Principles', time: '4 hours ago' },
+    { user: 'Dawit Haile', action: 'Uploaded', study: 'Biblical Study Methods', time: '6 hours ago' },
+    { user: 'Hanan Tesfaye', action: 'Completed', study: 'Christian Leadership Development', time: '1 day ago' },
   ];
 
   const getStatColor = (color: string) => {
@@ -109,7 +109,7 @@ const Dashboard = ({ onPageChange }: DashboardProps) => {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-brand-brown mb-2">Dashboard Overview</h1>
-        <p className="text-brand-brown/70">Welcome back! Here's what's happening with your studies.</p>
+        <p className="text-brand-brown/70">Welcome back! Here's what's happening with your spiritual studies.</p>
       </div>
 
       {/* Stats Grid */}

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Search, 
@@ -37,8 +36,8 @@ const ManageStudies = () => {
   const [studies, setStudies] = useState<Study[]>([
     {
       id: '1',
-      title: 'Advanced React Patterns',
-      description: 'Master advanced React concepts including hooks, context, and performance optimization.',
+      title: 'Foundations of Faith',
+      description: 'Build a strong foundation in Christian beliefs and biblical principles for spiritual growth.',
       chapters: 12,
       enrolledUsers: 234,
       isLocked: false,
@@ -48,8 +47,8 @@ const ManageStudies = () => {
     },
     {
       id: '2',
-      title: 'TypeScript Fundamentals',
-      description: 'Learn TypeScript from basics to advanced type system features.',
+      title: 'Prayer and Meditation Principles',
+      description: 'Learn the fundamentals of prayer and meditation to deepen your relationship with God.',
       chapters: 8,
       enrolledUsers: 156,
       isLocked: true,
@@ -59,8 +58,8 @@ const ManageStudies = () => {
     },
     {
       id: '3',
-      title: 'Node.js Backend Development',
-      description: 'Build scalable backend applications with Node.js and Express.',
+      title: 'Biblical Study Methods',
+      description: 'Master effective methods for studying Scripture and understanding God\'s Word.',
       chapters: 15,
       enrolledUsers: 89,
       isLocked: false,
@@ -70,9 +69,9 @@ const ManageStudies = () => {
     },
     {
       id: '4',
-      title: 'CSS Grid and Flexbox Mastery',
-      description: 'Modern CSS layout techniques for responsive web design.',
-      chapters: 6,
+      title: 'Christian Leadership Development',
+      description: 'Develop leadership skills rooted in Christian values and biblical wisdom.',
+      chapters: 10,
       enrolledUsers: 312,
       isLocked: false,
       createdAt: '2024-01-08',
@@ -118,14 +117,13 @@ const ManageStudies = () => {
   return (
     <div className="p-6">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Manage Studies</h1>
-        <p className="text-gray-600">Edit, organize, and control access to your study materials.</p>
+        <h1 className="text-3xl font-bold text-brand-brown mb-2">Manage Studies</h1>
+        <p className="text-brand-brown/70">Edit, organize, and control access to your spiritual study materials.</p>
       </div>
 
-      {/* Search and Filter */}
       <div className="mb-6 flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-brand-brown/40" />
           <Input
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -134,11 +132,11 @@ const ManageStudies = () => {
           />
         </div>
         <div className="flex items-center space-x-2">
-          <Filter className="h-4 w-4 text-gray-500" />
+          <Filter className="h-4 w-4 text-brand-brown/50" />
           <select
             value={filterStatus}
             onChange={(e) => setFilterStatus(e.target.value as any)}
-            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-3 py-2 border border-brand-border rounded-md focus:outline-none focus:ring-2 focus:ring-brand-gold"
           >
             <option value="all">All Studies</option>
             <option value="published">Published</option>
@@ -148,21 +146,20 @@ const ManageStudies = () => {
         </div>
       </div>
 
-      {/* Studies Grid */}
       <div className="grid gap-6">
         {filteredStudies.map((study) => (
           <Card key={study.id} className="p-6 hover:shadow-lg transition-shadow duration-200">
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="flex items-center space-x-3 mb-2">
-                  <h3 className="text-xl font-semibold text-gray-900">{study.title}</h3>
+                  <h3 className="text-xl font-semibold text-brand-brown">{study.title}</h3>
                   <span className={`px-2 py-1 text-xs font-medium rounded-full ${getStatusColor(study.status, study.isLocked)}`}>
                     {getStatusText(study.status, study.isLocked)}
                   </span>
                 </div>
-                <p className="text-gray-600 mb-4">{study.description}</p>
+                <p className="text-brand-brown/70 mb-4">{study.description}</p>
                 
-                <div className="flex items-center space-x-6 text-sm text-gray-500">
+                <div className="flex items-center space-x-6 text-sm text-brand-brown/60">
                   <div className="flex items-center space-x-1">
                     <BookOpen className="h-4 w-4" />
                     <span>{study.chapters} chapters</span>
@@ -179,17 +176,17 @@ const ManageStudies = () => {
               </div>
 
               <div className="flex items-center space-x-2 ml-4">
-                <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-700 hover:bg-blue-50">
+                <Button variant="ghost" size="sm" className="text-brand-gold hover:text-brand-gold hover:bg-brand-gold/10">
                   <Eye className="h-4 w-4" />
                 </Button>
-                <Button variant="ghost" size="sm" className="text-green-600 hover:text-green-700 hover:bg-green-50">
+                <Button variant="ghost" size="sm" className="text-brand-success hover:text-brand-success hover:bg-brand-success/10">
                   <Edit className="h-4 w-4" />
                 </Button>
                 <Button 
                   variant="ghost" 
                   size="sm" 
                   onClick={() => toggleLock(study.id)}
-                  className={study.isLocked ? "text-red-600 hover:text-red-700 hover:bg-red-50" : "text-orange-600 hover:text-orange-700 hover:bg-orange-50"}
+                  className={study.isLocked ? "text-red-600 hover:text-red-700 hover:bg-red-50" : "text-brand-warning hover:text-brand-warning hover:bg-brand-warning/10"}
                 >
                   {study.isLocked ? <Unlock className="h-4 w-4" /> : <Lock className="h-4 w-4" />}
                 </Button>
@@ -209,8 +206,8 @@ const ManageStudies = () => {
 
       {filteredStudies.length === 0 && (
         <div className="text-center py-12">
-          <BookOpen className="h-12 w-12 mx-auto mb-4 text-gray-300" />
-          <p className="text-gray-500">No studies found matching your criteria.</p>
+          <BookOpen className="h-12 w-12 mx-auto mb-4 text-brand-brown/30" />
+          <p className="text-brand-brown/60">No studies found matching your criteria.</p>
         </div>
       )}
 
@@ -218,8 +215,8 @@ const ManageStudies = () => {
       {showDeleteModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 max-w-md mx-4 w-full">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Delete Study</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-lg font-semibold text-brand-brown mb-4">Delete Study</h3>
+            <p className="text-brand-brown/70 mb-6">
               Are you sure you want to delete this study? This action cannot be undone and will remove all associated chapters and pages.
             </p>
             <div className="flex justify-end space-x-3">
